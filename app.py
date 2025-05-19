@@ -3,6 +3,9 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+app.logger.info(f"Headers: {request.headers}")
+app.logger.info(f"Body: {request.get_data()}")
+
 @app.route('/')
 def home():
     return '這是你的 POST API！'
